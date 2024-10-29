@@ -1,0 +1,2 @@
+# leetcodeEasy
+Practice to perfect
