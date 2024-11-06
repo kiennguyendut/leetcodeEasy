@@ -10,7 +10,7 @@ public:
         k = k % n; // Đảm bảo k không lớn hơn kích thước mảng
 
         // Bước 1: Đảo ngược toàn bộ mảng
-        reverse(nums.begin(), nums.end());
+        reverse(nums.begin(), nums.end()); 
         // Bước 2: Đảo ngược k phần tử đầu tiên
         reverse(nums.begin(), nums.begin() + k);
         // Bước 3: Đảo ngược phần còn lại
