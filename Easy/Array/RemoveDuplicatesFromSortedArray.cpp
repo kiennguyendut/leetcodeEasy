@@ -6,24 +6,31 @@ using namespace std;
 class Solution {
     public: 
         int removeDuplicates(vector<int>& nums) {
-            // If the input array is empty, return 0 as there are no elements to process.
-            if(nums.empty()) return 0;
+            // // If the input array is empty, return 0 as there are no elements to process.
+            // if(nums.empty()) return 0;
             
-            // Initialize uniqueIndex to 1, which tracks the position for the next unique element.
-            int uniqueIndex = 1;
+            // // Initialize uniqueIndex to 1, which tracks the position for the next unique element.
+            // int uniqueIndex = 1;
             
-            // Iterate through the array starting from the second element.
-            for(int i = 1; i < nums.size(); i++){
-                // If the current element is different from the last unique element.
-                if(nums[i] != nums[uniqueIndex]){
-                    // Copy the current element to the uniqueIndex position.
-                    nums[uniqueIndex] = nums[i];
-                    // Increment uniqueIndex to point to the next position for a unique element.
-                    uniqueIndex++;                    
-                }
-            }        
-            // Return the count of unique elements (uniqueIndex represents the last index, so add 1).
-            return uniqueIndex;
+            // // Iterate through the array starting from the second element.
+            // for(int i = 1; i < nums.size(); i++){
+            //     // If the current element is different from the last unique element.
+            //     if(nums[i] != nums[uniqueIndex -1]){
+            //         // Copy the current element to the uniqueIndex position.
+            //         nums[uniqueIndex] = nums[i];
+            //         // Increment uniqueIndex to point to the next position for a unique element.
+            //         uniqueIndex++;                    
+            //     }
+            // }        
+            // // Return the count of unique elements (uniqueIndex represents the last index, so add 1).
+            // return uniqueIndex;
+
+            if(nums.size() == 0) return 0; // If the input array is empty, return 0.
+            auto it = unique(nums.begin(), nums.end());
+            // Erase the non-unique elements from the vector.
+            nums.erase(it, nums.end());
+            // Return the size of the modified vector, which now contains only unique elements.
+            return nums.size();
         }
 };
 

@@ -61,3 +61,13 @@ public:
         return result;
     }
 };
+
+int main(){
+    Solution solution;
+    vector<int> nums = {-1, 0, 1, 2, -1, -4};
+    vector<vector<int>> result = solution.threeSum(nums);
+    for (const auto &triplet : result) {
+        cout << "[" << triplet[0] << ", " << triplet[1] << ", " << triplet[2] << "]" << endl;
+    }
+    return 0;
+}

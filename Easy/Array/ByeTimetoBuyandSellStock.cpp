@@ -17,3 +17,16 @@ public:
     }
     
 };
+
+int main() {
+    Solution solution;
+    vector<int> prices = {7, 1, 5, 3, 6, 4};
+    
+    // Call the maxProfit method and store the result.
+    int profit = solution.maxProfit(prices);
+    
+    // Print the maximum profit.
+    cout << "Maximum profit: " << profit << endl;
+    
+    return 0;
+}
