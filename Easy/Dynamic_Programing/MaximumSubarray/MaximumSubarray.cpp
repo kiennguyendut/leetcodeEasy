@@ -1,12 +1,26 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        int maxSum = nums[0];
-        int currentSum = nums[0];
+        int maxSum = nums[0]; // tổng lớn nhất của subarray kết thúc tại vị trí hiện tại.
+        int currentSum = nums[0]; //tổng lớn nhất tìm được cho tới bây giờ.
+        //Duyệt mảng từ phần tử thứ hai trở đi, 
         for(int i = 1; i < nums.size(); ++i) {
             currentSum = max(nums[i], currentSum + nums[i]);
-            
+            maxSum = max(maxSum, currentSum);
         }
+        return maxSum;
         
     }
 };
+
+int main() {
+    Solution sol;
+    vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
+    cout << sol.maxSubArray(nums) << endl; // Output: 6
+    return 0;
+}
